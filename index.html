@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- include our dependency on angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8">
+    <title>Flashcards</title>
+</head>
+
+<body>
+    <div ng-app='app' ng-controller='mainCtrl'>
+        <h1>Create Flashcard</h1>
+
+        <div class='top-panel'>
+            <form name='cardForm' ng-submit='addNew(cardForm)'>
+                <input placeholder='Front' ng-model='cardForm.front' />
+                <input placeholder='Back' ng-model='cardForm.back' />
+                <button type='submit'>Add New</button>
+            </form>
+        </div>
+        <ul class='Card-list'>
+            <li ng-repeat='card in cards'>
+                <flashCard card='card'>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
