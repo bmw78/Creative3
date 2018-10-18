@@ -1,6 +1,6 @@
 angular.module('app', [])
   .controller('mainCtrl', mainCtrl)
-  .directive('flashCard', flashCardDirective);
+  .directive('fc', fcDirective);
   
 function mainCtrl($scope) {
 
@@ -19,7 +19,7 @@ function mainCtrl($scope) {
 }
 
 
-function flashCardDirective() {
+function fcDirective() {
     console.log("here")
   return {
     scope: {
@@ -29,7 +29,7 @@ function flashCardDirective() {
     replace: 'true',
     template: (
       '<div class="Flashcard">' +
-      '<h4>{{card.front}}</h4>' + '<h5>{{card.back}}</h5>'
+      '<h4>{{card.front}}</h4>' //+ '<h5>{{card.back}}</h5>'
       + '</div>'
     ),
     link: link
@@ -37,6 +37,6 @@ function flashCardDirective() {
 
   function link(scope)
   {
-      console.log($scope.cards);
+      console.log(scope.cards);
   }
 }
