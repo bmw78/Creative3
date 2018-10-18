@@ -15,7 +15,14 @@ function mainCtrl($scope) {
     console.log($scope.cards)
     card.front = ''; 
     card.back = ''; 
+    
+    $scope.countCards();
   };
+  
+  $scope.countCards = function() {
+    document.getElementById("numberCards").innerHTML = $scope.cards.length;
+  }
+  
 }
 
 

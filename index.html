@@ -13,7 +13,12 @@
 
 <body>
     <div ng-app='app' ng-controller='mainCtrl'>
-        <h1>Create Flashcard</h1>
+
+        <!-- Page Title -->
+        <div class="text-center">
+            <h1>Create Flashcard</h1>
+            <br>
+        </div>
 
 
         <div class="container">
@@ -32,8 +37,11 @@
                 <div class="col">
                     <div class='top-panel'>
                         <form name='cardForm' ng-submit='addNew(cardForm)'>
-                            <input placeholder='Front' ng-model='cardForm.front' />
-                            <input placeholder='Back' ng-model='cardForm.back' />
+                            <input placeholder='Front' style="width: 100%;" ng-model='cardForm.front' />
+                            <br>
+                            <br>
+                            <textarea name="textArea" style="width: 100%; height: 200px;" placeholder='Back' ng-model='cardForm.back'></textarea>
+                            <br>
                             <button type='submit'>Add New</button>
                         </form>
                     </div>
@@ -41,7 +49,7 @@
 
                 <!-- 3rd Column: Number of Cards & Quiz -->
                 <div class="col">
-                    
+                    <div>Number of Cards: <div id="numberCards"></div></div>
                 </div>
 
 
