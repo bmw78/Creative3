@@ -16,20 +16,24 @@ function mainCtrl($scope) {
     card.front = ''; 
     card.back = ''; 
   };
+  
+  $scope.setSelectedCard = function (card) {
+        $scope.selectedCard = card;
+    };
+
 }
 
 
 function fcDirective() {
-    console.log("here")
   return {
     scope: {
       card: '=' 
     },
-    restrict: 'A',
+    restrict: 'E',
     replace: 'true',
     template: (
       '<div class="Flashcard">' +
-      '<h4>{{card.front}}</h4>' //+ '<h5>{{card.back}}</h5>'
+      '<h4>{{card.front}}</h4>' + '<h5>{{card.back}}</h5>'
       + '</div>'
     ),
     link: link
