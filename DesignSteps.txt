@@ -1,15 +1,17 @@
--Layout
--Store data
--Form to enter Data (2: Front & Back)
--List of current cards
+-Layout  ///
+-Store data ///
+-Form to enter Data (2: Front & Back)   ///
+-List of current cards  ///
 -Buttons:
     -Remove Selected Questions
     -Clear (optional)
-    -Add (for the form)
+    -Add (for the form) ///
     -Start quiz
     -Reveal Card back
+-Style
     
 
 Optional:
 -Allow for insertation of answers
 -Card flipping
+-Mouseover Card list for back info

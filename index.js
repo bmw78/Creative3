@@ -15,12 +15,17 @@ function mainCtrl($scope) {
     console.log($scope.cards)
     card.front = ''; 
     card.back = ''; 
+    
+    $scope.countCards();
   };
   
   $scope.setSelectedCard = function (card) {
         $scope.selectedCard = card;
     };
 
+  $scope.countCards = function() {
+    document.getElementById("numberCards").innerHTML = $scope.cards.length;
+  }
 }
 
 
