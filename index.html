@@ -3,6 +3,7 @@
 
 <head>
     <!-- include our dependency on angular -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -14,20 +15,40 @@
     <div ng-app='app' ng-controller='mainCtrl'>
         <h1>Create Flashcard</h1>
 
-        <div class='top-panel'>
-            <form name='cardForm' ng-submit='addNew(cardForm)'>
-                <input placeholder='Front' ng-model='cardForm.front' />
-                <input placeholder='Back' ng-model='cardForm.back' />
-                <button type='submit'>Add New</button>
-            </form>
+
+        <div class="container">
+            <div class="row">
+
+                <!-- 1st Column: Card List & Card Removal buttons -->
+                <div class="col">
+                    <ul class='Card-list'>
+                        <li ng-repeat='card in cards'>
+                            <fc card='card'>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2nd Column: New Card Form & Start Quiz Button -->
+                <div class="col">
+                    <div class='top-panel'>
+                        <form name='cardForm' ng-submit='addNew(cardForm)'>
+                            <input placeholder='Front' ng-model='cardForm.front' />
+                            <input placeholder='Back' ng-model='cardForm.back' />
+                            <button type='submit'>Add New</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 3rd Column: Number of Cards & Quiz -->
+                <div class="col">
+                    
+                </div>
+
+
+            </div>
+
         </div>
-        
-        <ul class='Card-list'>
-            <li ng-repeat='card in cards'>
-                <fc card='card'>
-            </li>
-        </ul>
-        
+
     </div>
 </body>
 
