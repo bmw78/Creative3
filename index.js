@@ -25,7 +25,7 @@ function flashCardDirective() {
     scope: {
       card: '=' 
     },
-    restrict: 'E',
+    restrict: 'A',
     replace: 'true',
     template: (
       '<div class="Flashcard">' +
