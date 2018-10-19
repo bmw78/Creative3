@@ -19,9 +19,8 @@ function mainCtrl($scope) {
     $scope.countCards();
   };
   
-  $scope.setSelectedCard = function (card) {
-        $scope.selectedCard = card;
-    };
+  $scope.position = 0;
+  $scope.finalPos = $scope.cards.length;
 
   $scope.countCards = function() {
     document.getElementById("numberCards").innerHTML = $scope.cards.length;
