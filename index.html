@@ -48,11 +48,7 @@
 
                 <!-- 3rd Column: Number of Cards & Quiz -->
                 <div class="col">
-                    <div>Card Number
-                        <div id="numberCards"></div>
-                    </div>
-                     
-                      <fc card='cards[position]'></fc>
+                      <fc ng-if="position >= 0" card='cards[position]'></fc>
                 </div>
 
             </div>
@@ -62,8 +58,8 @@
                 <div class="col"></div>
                 <div class="col"></div>
                 <div class="col">
-               <button ng-click=''> Start Quiz </button>
-               <button ng-click=''>Next Card</button>
+               <button ng-click='startQuiz()' ng-if='quizNotStarted()'> Start Quiz </button>
+               <button ng-click='nextCard()' ng-if='haveNextCard()'>Next Card</button>
                </div>
             </div>         
 

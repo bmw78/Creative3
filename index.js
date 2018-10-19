@@ -16,14 +16,28 @@ function mainCtrl($scope) {
     card.front = ''; 
     card.back = ''; 
     
-    $scope.countCards();
   };
   
-  $scope.position = 0;
-  $scope.finalPos = $scope.cards.length;
-
-  $scope.countCards = function() {
-    document.getElementById("numberCards").innerHTML = $scope.cards.length;
+  $scope.position = -1;
+  
+  $scope.nextCard = function()
+  {
+    $scope.position++;
+  }
+  
+  $scope.quizNotStarted = function()
+  {
+    return ($scope.position == -1);
+  }
+  
+  $scope.startQuiz = function()
+  {
+    $scope.position = 0;
+  }
+  
+ $scope.haveNextCard = function()
+  {
+    return ($scope.position >= 0 && $scope.position < $scope.cards.length);
   }
 }
 
