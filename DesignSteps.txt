@@ -3,15 +3,15 @@
 -Form to enter Data (2: Front & Back)   ///
 -List of current cards  ///
 -Buttons:
-    -Remove Selected Questions
-    -Clear (optional)
+    B-Remove Selected Questions
+    B-Clear (optional)
     -Add (for the form) ///
-    -Start quiz
-    -Reveal Card back
+    J-Start quiz
+    J-Reveal Card back
 -Style
     
 
 Optional:
 -Allow for insertation of answers
 -Card flipping
--Mouseover Card list for back info
+B-Mouseover Card list for back info

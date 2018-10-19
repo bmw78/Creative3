@@ -20,16 +20,26 @@
             <br>
         </div>
 
+
         <div class="container">
             <div class="row">
 
                 <!-- 1st Column: Card List & Card Removal buttons -->
                 <div class="col">
-                    <ul class='Card-list'>
+                    <!-- <ul class='Card-list'>
                         <li ng-repeat='card in cards'>
                             <fc card='card'>
                         </li>
-                    </ul>
+                    </ul> -->
+                    <div ng-style="list" ng-repeat='card in cards'>
+                        <fc card='card'>
+                    </div>
+                    <br>
+
+                    <div id="hoverNote">
+                        <p><button id="removeButton" ng-click="remove()">Remove marked cards</button></p>
+                        <p>Hover over a card entry to see the back</p>
+                    </div>
                 </div>
 
                 <!-- 2nd Column: New Card Form & Start Quiz Button -->
@@ -48,6 +58,7 @@
 
                 <!-- 3rd Column: Number of Cards & Quiz -->
                 <div class="col">
+
                     <div>Card Number
                         <div id="numberCards"></div>
                     </div>
