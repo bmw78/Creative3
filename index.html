@@ -20,17 +20,6 @@
             <br>
         </div>
 
-        
-       <ul class='Card-list'>
-            <li ng-repeat='card in cards'>
-                <fc card='card'>
-            </li>
-        </ul>
-        
-        
-
-
-
         <div class="container">
             <div class="row">
 
@@ -59,13 +48,11 @@
 
                 <!-- 3rd Column: Number of Cards & Quiz -->
                 <div class="col">
-                    <div>Number of Cards: <div id="numberCards"></div></div>
-                    
-                    
-                    <div class ='Card' ng-show = 'selectedCard'>
-            
+                    <div>Card Number
+                        <div id="numberCards"></div>
                     </div>
-                    
+                     
+                      <fc card='cards[0]'></fc>
                 </div>
 
 
