@@ -24,16 +24,16 @@
             <div class="row">
 
                 <!-- 1st Column: Card List & Card Removal buttons -->
-                <div class="col">
+                <div class="col" ng-if='quizNotStarted()'>
                     <ul class='Card-list'>
                         <li ng-repeat='card in cards'>
-                            <fc card='card'>
+                            <fc card='card' show-answer='true'>
                         </li>
                     </ul>
                 </div>
 
                 <!-- 2nd Column: New Card Form & Start Quiz Button -->
-                <div class="col">
+                <div class="col" ng-if='quizNotStarted()'>
                     <div class='top-panel'>
                         <form name='cardForm' ng-submit='addNew(cardForm)'>
                             <input placeholder='Front' style="width: 100%;" ng-model='cardForm.front' />
@@ -48,7 +48,7 @@
 
                 <!-- 3rd Column: Number of Cards & Quiz -->
                 <div class="col">
-                      <fc ng-if="position >= 0" card='cards[position]'></fc>
+                      <fc ng-if="position >= 0" card='cards[position]' show-answer='showAnswer'></fc>
                 </div>
 
             </div>
@@ -60,6 +60,7 @@
                 <div class="col">
                <button ng-click='startQuiz()' ng-if='quizNotStarted()'> Start Quiz </button>
                <button ng-click='nextCard()' ng-if='haveNextCard()'>Next Card</button>
+               <button ng-click='enableShowAnswer()' ng-if="!quizNotStarted()">Show Answer</button>
                </div>
             </div>         
 

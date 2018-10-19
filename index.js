@@ -5,6 +5,7 @@ angular.module('app', [])
 function mainCtrl($scope) {
 
   $scope.cards = [];
+  $scope.showAnswer = false;
 
   $scope.addNew = function(card) {
     $scope.cards.push({
@@ -15,14 +16,19 @@ function mainCtrl($scope) {
     console.log($scope.cards)
     card.front = ''; 
     card.back = ''; 
-    
   };
   
   $scope.position = -1;
   
+  $scope.enableShowAnswer = function()
+  {
+    $scope.showAnswer = true; 
+  }
+  
   $scope.nextCard = function()
   {
     $scope.position++;
+    $scope.showAnswer = false;
   }
   
   $scope.quizNotStarted = function()
@@ -45,13 +51,14 @@ function mainCtrl($scope) {
 function fcDirective() {
   return {
     scope: {
-      card: '=' 
+      card: '=',
+      showAnswer: '='
     },
     restrict: 'E',
     replace: 'true',
     template: (
       '<div class="Flashcard">' +
-      '<h4>{{card.front}}</h4>' + '<h5>{{card.back}}</h5>'
+      '<h5>{{card.front}}</h5>' + '<h5 ng-if="showAnswer">{{card.back}}</h5>'
       + '</div>'
     ),
     link: link
