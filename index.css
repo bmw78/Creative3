@@ -1,14 +1,62 @@
-body {
-    background-color: black;
-    color: white;
+@font-face {
+    font-family: Ostrich;
+    src: url(./ostrich-sans.sans-medium.ttf);
 }
 
+body {
+    background-color: white;
+    color: black;
+}
+
+h1{
+  font-family: Ostrich; font-size: 56px;
+  font-style: normal; font-variant: normal;
+  font-weight: 1000; line-height: 35px; color:black;
+  margin: 20px;
+}
+
+h2{
+  font-family: Ostrich; font-size: 36px;
+  font-style: normal; font-variant: normal;
+  font-weight: 1000; line-height: 35px; color:black;
+  margin: 20px;
+}
+
+button {
+  font-family: Ostrich; font-size: 24px;
+  font-style: normal; font-variant: normal;
+  font-weight: 1000; line-height: 35px; color:black;
+}
+
+form {
+    font-family: Ostrich; font-size: 18px;
+  font-style: normal; font-variant: normal;
+  font-weight: 1000; line-height: 35px; color:black;
+}
 .col {
-    border: 1px solid purple;
+    border: 10px solid blue;
     margin: 1px;
     padding: 1px;
 }
 
+.col1 {
+    border: 0px;
+    margin: 1px;
+    padding: 1px;
+}
+
+
+.card-front{
+  font-family: Ostrich; font-size: 24px;
+  font-style: normal; font-variant: normal;
+  font-weight: 1000; line-height: 35px; color:black;
+}
+
+.card-back{
+  font-family: Ostrich; font-size: 24px;
+  font-style: normal; font-variant: normal;
+  font-weight: 1000; line-height: 35px; color:black;
+}
 
 
 #hoverNote {

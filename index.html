@@ -23,22 +23,23 @@
 
         <div class="container">
             <div class="row">
+                <div class="col"><h2>Current Cards</h2></div>
+                <div class="col"><h2>Enter New Card</h2></div>
+                <div class="col"><h2>Study</h2></div>
+            </div>
+            <div class="row">
 
                 <!-- 1st Column: Card List & Card Removal buttons -->
                 <div class="col" ng-if='quizNotStarted()'>
-                    <!--    <ul class='Card-list'>
-                        <li ng-repeat='card in cards'>
-                            <fc card='card' show-answer='true'>
-                        </li>
-                    </ul> -->
-                    <div ng-style="list" ng-repeat='card in cards'>
-                        <fc card='card'>
-                    </div>
+                       
+                        <div ng-repeat='card in cards'>
+                            <fc card='card' show-answer='false' checkbox='true'>
+                        </div>
+                
                     <br>
 
                     <div id="hoverNote">
                         <p><button id="removeButton" ng-click="remove()">Remove marked cards</button></p>
-                        <p>Hover over a card entry to see the back</p>
                     </div>
                 </div>
 
@@ -59,19 +60,20 @@
                 <!-- 3rd Column: Number of Cards & Quiz -->
                 <div class="col">
 
-                    <fc ng-if="position >= 0" card='cards[position]' show-answer='showAnswer'></fc>
+                    <fc ng-if="position >= 0" card='cards[position]' show-answer='showAnswer' checkbox='false'></fc>
                 </div>
 
             </div>
 
             <div class="row">
 
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col">
+                <div class="col col1"></div>
+                <div class="col col1"></div>
+                <div class="col col1">
                     <button ng-click='startQuiz()' ng-if='quizNotStarted()'> Start Quiz </button>
                     <button ng-click='nextCard()' ng-if='haveNextCard()'>Next Card</button>
                     <button ng-click='enableShowAnswer()' ng-if="!quizNotStarted()">Show Answer</button>
+                    <button ng-click='exitQuiz()' ng-if="!quizNotStarted()">Exit Quiz</button>
                 </div>
             </div>
 

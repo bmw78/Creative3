@@ -19,8 +19,6 @@ function mainCtrl($scope) {
 
   };
 
-
- 
   
   $scope.position = -1;
   
@@ -43,11 +41,18 @@ function mainCtrl($scope) {
   $scope.startQuiz = function()
   {
     $scope.position = 0;
+    $scope.showAnswer = false;
   }
   
  $scope.haveNextCard = function()
   {
     return ($scope.position >= 0 && $scope.position < $scope.cards.length);
+  }
+  
+  $scope.exitQuiz = function()
+  {
+    $scope.position = -1;
+    $scope.showAnswer =true;
   }
 
   $scope.remove = function() {
@@ -66,14 +71,16 @@ function fcDirective() {
   return {
     scope: {
       card: '=',
-      showAnswer: '='
+      showAnswer: '=',
+      checkbox: '='
+      
     },
     restrict: 'E',
     replace: 'true',
     template: (
-      '<div class="Flashcard" title="{{card.back}}">' +
-      '<input type="checkbox"  ng-model="card.done">' +
-      '<span> {{card.front}}</span>' // + '<h5 ng-if="showAnswer">{{card.back}}</h5>'
+      '<div class="Flashcard">' +
+      '<input type="checkbox" ng-if="checkbox" ng-model="card.done">' +
+      '<span class="card-front"> {{card.front}}</span>'  + '<br/>' + '<span class="card-back" ng-if="showAnswer">{{card.back}}</span>'
       +
       '</div>'
     ),
